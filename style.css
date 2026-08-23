@@ -1695,129 +1695,255 @@ a {
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* =========================================================
+   MOBILE NAVIGATION
+   ========================================================= */
 
-@media (max-width: 800px) {
+.mobile-quote {
+    display: none;
+}
 
-    .page-hero {
-        min-height: 75vh;
+.menu-btn {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 8px;
+
+    border: none;
+
+    background: transparent;
+
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 6px;
+
+    z-index: 50;
+}
+
+.menu-btn span {
+    display: block;
+
+    width: 26px;
+    height: 1.5px;
+
+    background: #ffffff;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        position: absolute;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+
+        height: 76px;
+
+        padding: 0 24px;
+
+        display: flex;
+        align-items: center;
+
+        background: rgba(4, 17, 31, 0.72);
+
+        backdrop-filter: blur(12px);
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     }
 
-    .page-hero-content {
-        margin: 0 7vw 70px;
+
+    /* -------------------------
+       LOGO
+       ------------------------- */
+
+    .logo {
+        gap: 10px;
     }
 
-    .story-grid,
-    .mission-section,
-    .director-section,
-    .service-block,
-    .contact-section {
-        grid-template-columns: 1fr;
+    .logo-mark {
+        width: 34px;
+        height: 34px;
+
+        font-size: 15px;
     }
 
-    .mission-image,
-    .director-image {
-        min-height: 450px;
+    .logo-text strong {
+        font-size: 18px;
+
+        letter-spacing: 2px;
     }
 
-    .mission-content,
-    .director-content,
-    .service-content {
-        padding: 70px 7vw;
+    .logo-text small {
+        font-size: 5px;
+
+        letter-spacing: 1.2px;
     }
 
-    .service-block.reverse .service-image {
-        order: 1;
+
+    /* -------------------------
+       DESKTOP ELEMENTS
+       ------------------------- */
+
+    .quote-btn {
+        display: none;
     }
 
-    .service-block.reverse .service-content {
-        order: 2;
+
+    /* -------------------------
+       HAMBURGER
+       ------------------------- */
+
+    .menu-btn {
+        display: flex;
+
+        margin-left: auto;
     }
 
-    .values-grid {
-        grid-template-columns: 1fr;
-    }
 
-    .gallery-header {
+    /* -------------------------
+       DROPDOWN MENU
+       ------------------------- */
+
+    .nav-links {
+        position: absolute;
+
+        top: 76px;
+        left: 0;
+
+        width: 100%;
+
+        display: flex;
+
         flex-direction: column;
 
-        align-items: flex-start;
+        align-items: stretch;
+
+        gap: 0;
+
+        padding: 8px 24px 25px;
+
+        background: rgba(4, 17, 31, 0.97);
+
+        backdrop-filter: blur(18px);
+
+        border-bottom: 1px solid rgba(201, 155, 63, 0.25);
+
+        transform: translateY(-15px);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        pointer-events: none;
+
+        transition:
+            transform 0.3s ease,
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+
+        z-index: 40;
     }
 
-    .gallery-grid {
-        grid-template-columns: 1fr 1fr;
+
+    /* OPEN MENU */
+
+    .nav-links.mobile-open {
+        transform: translateY(0);
+
+        opacity: 1;
+
+        visibility: visible;
+
+        pointer-events: auto;
     }
 
-    .gallery-item.large {
-        height: 500px;
-        grid-row: span 1;
+
+    /* -------------------------
+       MENU LINKS
+       ------------------------- */
+
+    .nav-links a {
+        width: 100%;
+
+        padding: 18px 4px;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+        color: rgba(255, 255, 255, 0.9);
+
+        font-family: "DM Sans", sans-serif;
+
+        font-size: 14px;
+
+        letter-spacing: 0.3px;
     }
 
-    .gallery-item {
-        height: 300px;
+    .nav-links a::after {
+        display: none;
     }
 
-    .contact-section {
-        gap: 60px;
-
-        padding: 90px 7vw;
+    .nav-links a:hover,
+    .nav-links a.active {
+        color: var(--gold);
     }
 
-    .contact-form-wrapper {
-        padding: 30px;
+
+    /* -------------------------
+       MOBILE QUOTE
+       ------------------------- */
+
+    .nav-links .mobile-quote {
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        margin-top: 12px;
+
+        padding: 16px 18px;
+
+        border: none;
+
+        background: var(--gold);
+
+        color: #111111;
+
+        font-weight: 600;
     }
 
-    .footer {
-        grid-template-columns: 1fr;
-
-        gap: 40px;
-
-        padding: 70px 7vw 30px;
+    .mobile-quote span {
+        font-size: 20px;
     }
 
-    .footer-bottom {
-        grid-column: auto;
+
+    /* -------------------------
+       HAMBURGER ANIMATION
+       ------------------------- */
+
+    .menu-btn.active span:nth-child(1) {
+        transform: translateY(7.5px) rotate(45deg);
+    }
+
+    .menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-btn.active span:nth-child(3) {
+        transform: translateY(-7.5px) rotate(-45deg);
     }
 }
-
-
-@media (max-width: 550px) {
-
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery-item,
-    .gallery-item.large {
-        height: 400px;
-    }
-
-    .gallery-filters {
-        overflow-x: auto;
-
-        padding-bottom: 15px;
-    }
-
-    .gallery-filters button {
-        white-space: nowrap;
-    }
-
-    .service-content ul {
-        grid-template-columns: 1fr;
-    }
-
-    .page-hero-content h1 {
-        font-size: 58px;
-    }
-
-    .contact-hero h1 {
-        font-size: 65px;
-    }
-}
-

@@ -1,0 +1,732 @@
+:root {
+    --navy: #071a2d;
+    --dark-navy: #04111f;
+    --gold: #c99b3f;
+    --light-gold: #e2bd68;
+    --white: #ffffff;
+    --muted-white: rgba(255, 255, 255, 0.72);
+    --border: rgba(255, 255, 255, 0.18);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--dark-navy);
+    color: var(--white);
+    font-family: "DM Sans", sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 90px;
+
+    padding: 0 5vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 10;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+
+/* Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-mark {
+    width: 38px;
+    height: 38px;
+
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+
+    display: grid;
+    place-items: center;
+
+    color: var(--gold);
+    font-size: 20px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-text strong {
+    color: var(--gold);
+
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.logo-text small {
+    font-size: 6px;
+    letter-spacing: 1.4px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+
+/* Navigation */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+
+    margin-left: auto;
+    margin-right: 40px;
+}
+
+.nav-links a {
+    position: relative;
+
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.85);
+
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--gold);
+
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* Quote button */
+
+.quote-btn {
+    padding: 13px 24px;
+
+    background: var(--gold);
+    color: #101010;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: background 0.3s ease,
+                transform 0.3s ease;
+}
+
+.quote-btn:hover {
+    background: var(--light-gold);
+    transform: translateY(-2px);
+}
+
+
+/* Mobile menu */
+
+.menu-btn {
+    display: none;
+
+    border: 0;
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.menu-btn span {
+    display: block;
+
+    width: 25px;
+    height: 1px;
+
+    margin: 6px 0;
+
+    background: white;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    position: relative;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* Background */
+
+.hero-background {
+    position: absolute;
+    inset: 0;
+
+    background-image: url("images/longway-hero.jpg");
+    background-size: cover;
+    background-position: center;
+
+    transform: scale(1.05);
+
+    animation: slowZoom 15s ease-in-out infinite alternate;
+}
+
+@keyframes slowZoom {
+    from {
+        transform: scale(1.05);
+    }
+
+    to {
+        transform: scale(1.12);
+    }
+}
+
+
+/* Dark cinematic overlay */
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3, 16, 29, 0.96) 0%,
+            rgba(3, 16, 29, 0.80) 38%,
+            rgba(3, 16, 29, 0.35) 72%,
+            rgba(3, 16, 29, 0.58) 100%
+        );
+
+    z-index: 1;
+}
+
+
+/* =========================
+   AFRICA NETWORK
+========================= */
+
+.africa-network {
+    position: absolute;
+
+    right: 7%;
+    top: 25%;
+
+    width: 320px;
+    height: 320px;
+
+    opacity: 0.35;
+
+    z-index: 2;
+}
+
+.network-line {
+    position: absolute;
+
+    height: 1px;
+
+    background: var(--gold);
+
+    transform-origin: left center;
+}
+
+.line-one {
+    width: 180px;
+
+    top: 80px;
+    left: 50px;
+
+    transform: rotate(25deg);
+}
+
+.line-two {
+    width: 160px;
+
+    top: 150px;
+    left: 90px;
+
+    transform: rotate(-20deg);
+}
+
+.line-three {
+    width: 120px;
+
+    top: 220px;
+    left: 45px;
+
+    transform: rotate(-40deg);
+}
+
+.network-dot {
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    box-shadow: 0 0 15px rgba(201, 155, 63, 0.8);
+
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.dot-one {
+    top: 76px;
+    left: 45px;
+}
+
+.dot-two {
+    top: 145px;
+    left: 85px;
+    animation-delay: 0.7s;
+}
+
+.dot-three {
+    top: 205px;
+    left: 200px;
+    animation-delay: 1.2s;
+}
+
+.dot-four {
+    top: 240px;
+    left: 40px;
+    animation-delay: 1.8s;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.8);
+        opacity: 1;
+    }
+}
+
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.hero-content {
+    position: relative;
+
+    z-index: 3;
+
+    width: 100%;
+    max-width: 650px;
+
+    margin-left: 8vw;
+
+    padding-top: 60px;
+}
+
+.eyebrow {
+    margin-bottom: 25px;
+
+    color: var(--gold);
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(58px, 7vw, 105px);
+    font-weight: 400;
+
+    line-height: 0.95;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 35px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero-description {
+    max-width: 470px;
+
+    color: var(--muted-white);
+
+    font-size: 16px;
+    line-height: 1.7;
+
+    margin-bottom: 40px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.primary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 25px;
+
+    padding: 16px 23px;
+
+    background: var(--gold);
+    color: #101010;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: transform 0.3s ease,
+                background 0.3s ease;
+}
+
+.primary-btn:hover {
+    background: var(--light-gold);
+    transform: translateY(-3px);
+}
+
+.primary-btn span {
+    font-size: 17px;
+}
+
+.secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    color: white;
+
+    font-size: 12px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+
+    padding-bottom: 7px;
+}
+
+.secondary-btn span {
+    color: var(--gold);
+}
+
+
+/* =========================
+   HERO BOTTOM
+========================= */
+
+.hero-bottom {
+    position: absolute;
+
+    left: 5vw;
+    right: 5vw;
+    bottom: 35px;
+
+    z-index: 3;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+
+/* Scroll indicator */
+
+.scroll-indicator {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    color: rgba(255, 255, 255, 0.6);
+
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.scroll-line {
+    width: 45px;
+    height: 1px;
+
+    background: var(--gold);
+}
+
+
+/* Location */
+
+.hero-location {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.location-line {
+    width: 45px;
+    height: 1px;
+
+    background: var(--gold);
+}
+
+.hero-location div {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-location strong {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+.hero-location small {
+    margin-top: 4px;
+
+    color: var(--gold);
+
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   INTRO SECTION
+========================= */
+
+.intro {
+    min-height: 70vh;
+
+    padding: 130px 8vw;
+
+    background: #f5f1e8;
+
+    color: var(--navy);
+}
+
+.section-label {
+    display: flex;
+    gap: 15px;
+
+    margin-bottom: 40px;
+
+    color: var(--gold);
+
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.section-label span {
+    color: var(--navy);
+}
+
+.intro h2 {
+    max-width: 900px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(45px, 6vw, 85px);
+    font-weight: 400;
+
+    line-height: 1.05;
+}
+
+.intro h2 em {
+    color: #a67d2c;
+}
+
+.intro p {
+    max-width: 550px;
+
+    margin-top: 35px;
+
+    color: #5b5b5b;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .quote-btn {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .hero-content {
+        margin-left: 7vw;
+        margin-right: 7vw;
+    }
+
+    .hero h1 {
+        font-size: clamp(55px, 11vw, 90px);
+    }
+
+    .africa-network {
+        right: -50px;
+        opacity: 0.18;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        height: 75px;
+
+        padding: 0 6vw;
+    }
+
+    .logo-mark {
+        width: 32px;
+        height: 32px;
+    }
+
+    .logo-text strong {
+        font-size: 17px;
+    }
+
+    .hero {
+        min-height: 100svh;
+    }
+
+    .hero-video {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    z-index: 0;
+}
+
+    .hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3, 16, 29, 0.96) 0%,
+            rgba(3, 16, 29, 0.80) 38%,
+            rgba(3, 16, 29, 0.35) 72%,
+            rgba(3, 16, 29, 0.58) 100%
+        );
+
+    z-index: 1;
+}
+
+    .hero-content {
+        margin-left: 6vw;
+
+        padding-right: 6vw;
+        padding-top: 30px;
+    }
+
+    .eyebrow {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .hero h1 {
+        font-size: 56px;
+
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .hero-bottom {
+        left: 6vw;
+        right: 6vw;
+        bottom: 25px;
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+
+    .hero-location {
+        margin-left: auto;
+    }
+
+    .africa-network {
+        right: -130px;
+        top: 35%;
+    }
+
+    .intro {
+        padding: 90px 7vw;
+    }
+}

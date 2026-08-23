@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | Longway Import & Export</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+        <div class="logo-mark">◉</div>
+
+        <div class="logo-text">
+            <strong>LONGWAY</strong>
+            <small>IMPORT & EXPORT (PTY) LTD.</small>
+        </div>
+    </a>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html" class="active">Contact</a>
+    </nav>
+
+    <a href="contact.html" class="quote-btn">
+        Get a Quote
+    </a>
+
+    <button class="menu-btn" id="menuBtn">
+        <span></span>
+        <span></span>
+    </button>
+
+</header>
+
+
+<main>
+
+    <section class="contact-hero">
+
+        <div class="contact-hero-content">
+
+            <p class="eyebrow">
+                LET'S TALK
+            </p>
+
+            <h1>
+                Let's make
+                <br>
+                an <em>impression.</em>
+            </h1>
+
+            <p>
+                Tell us what you're looking for and we'll help
+                bring your gifting idea to life.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="contact-section">
+
+        <div class="contact-details">
+
+            <div class="section-label">
+                <span>01</span>
+                GET IN TOUCH
+            </div>
+
+            <h2>
+                Start a
+                <em>conversation.</em>
+            </h2>
+
+            <p>
+                Whether you have a fully developed brief or simply
+                need some ideas, we'd love to hear from you.
+            </p>
+
+
+            <div class="contact-info">
+
+                <div>
+                    <span>PHONE</span>
+
+                    <a href="tel:+27670194032">
+                        +27 67 019 4032
+                    </a>
+
+                    <a href="tel:+27835004803">
+                        +27 83 500 4803
+                    </a>
+                </div>
+
+
+                <div>
+                    <span>EMAIL</span>
+
+                    <a href="mailto:longwayimpex@gmail.com">
+                        longwayimpex@gmail.com
+                    </a>
+                </div>
+
+
+                <div>
+                    <span>ADDRESS</span>
+
+                    <p>
+                        20 Annie Road<br>
+                        Fontainebleau<br>
+                        Randburg, 2194<br>
+                        South Africa
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="contact-form-wrapper">
+
+            <form
+                id="contactForm"
+                class="contact-form"
+                action="https://formspree.io/f/YOUR_FORM_ID"
+                method="POST"
+            >
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="name">
+                            Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Your name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company">
+                            Company
+                        </label>
+
+                        <input
+                            type="text"
+                            id="company"
+                            name="company"
+                            placeholder="Company name"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="email">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@company.com"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">
+                            Phone
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="+27"
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="message">
+                        Tell us about your project
+                    </label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="7"
+                        placeholder="What are you looking for?"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- Honeypot spam protection -->
+
+                <input
+                    type="text"
+                    name="_gotcha"
+                    class="honeypot"
+                    tabindex="-1"
+                    autocomplete="off"
+                >
+
+
+                <button type="submit" class="submit-btn">
+
+                    Send Enquiry
+
+                    <span>→</span>
+
+                </button>
+
+                <p class="form-message" id="formMessage"></p>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <section class="map-section">
+
+        <iframe 
+            name="google-map"
+            src="https://www.google.com/maps?q=20+Annie+Road,+Fontainebleau,+Randburg,+South+Africa&output=embed"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+
+    </section>
+
+
+</main>
+
+
+<footer class="footer">
+
+    <div class="footer-brand">
+        <strong>LONGWAY</strong>
+        <p>
+            Bespoke corporate gifting
+            with an African vision.
+        </p>
+    </div>
+
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="footer-contact">
+        <p>20 Annie Road</p>
+        <p>Fontainebleau, Randburg</p>
+        <p>2194, South Africa</p>
+
+        <a href="mailto:longwayimpex@gmail.com">
+            longwayimpex@gmail.com
+        </a>
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Longway Import & Export (Pty) Ltd.
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
